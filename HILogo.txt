@@ -1,0 +1,28 @@
+    0123456789012345
+
+
+
+    HH IIIIIIIIII HH
+    HH IIIIIIIIII HH
+    HH     II     HH
+    HH     II     HH
+    HH     II     HH
+    HH     II     HH
+    HHHHHHHHHHHHHHHH
+    HHHHHHHHHHHHHHHH
+    HH     II     HH
+    HH     II     HH
+    HH     II     HH
+    HH     II     HH
+    HH     II     HH
+    HH IIIIIIIIII HH
+    HH IIIIIIIIII HH
+
+    Hughes
+    Industries
+    Ltd
+
+    Est 2014
+
+
+
