@@ -1,28 +1,24 @@
     0123456789012345
 
 
-
-    HH IIIIIIIIII HH
-    HH IIIIIIIIII HH
-    HH     II     HH
-    HH     II     HH
-    HH     II     HH
-    HH     II     HH
-    HHHHHHHHHHHHHHHH
-    HHHHHHHHHHHHHHHH
-    HH     II     HH
-    HH     II     HH
-    HH     II     HH
-    HH     II     HH
-    HH     II     HH
-    HH IIIIIIIIII HH
-    HH IIIIIIIIII HH
+0   HH IIIIIIIIII HH
+1   HH IIIIIIIIII HH
+2   HH     II     HH
+3   HH     II     HH
+4   HH     II     HH
+5   HH     II     HH
+6   HHHHHHHHHHHHHHHH
+7   HHHHHHHHHHHHHHHH
+8   HH     II     HH
+9   HH     II     HH
+0   HH     II     HH
+1   HH     II     HH
+2   HH     II     HH
+3   HH IIIIIIIIII HH
+4   HH IIIIIIIIII HH
 
     Hughes
     Industries
     Ltd
 
     Est 2014
-
-
-
