@@ -3,10 +3,19 @@ var coords = require('./coordinates.json');
     'use strict';
     var grid = [], y = 0;
 
+    function drawLine(from, to, grid, char) {
+        
+    }
+
     function plot(grid, path, char) {
-        var i = 0;
+        var i = 0, last, next;
         while (i < path.length) {
-            grid[path[i][1]][path[i][0]] = char;
+            next = path[i];
+            if (last && next) {
+                // draw line
+            }
+            grid[next[1]][next[0]] = char;
+            last = next;
             i += 1;
         } 
         return grid;
