@@ -4,18 +4,19 @@ var coords = require('./coordinates.json');
     var grid = [], y = 0;
 
     function drawLine(from, to, grid, char) {
-        var x, y;
-        if (from[0] === to[0]) {
-            x = from[0];
-            y = from[1]
+        var x = from[0],
+            y = from[1],
+            toX = to[0],
+            toY = to[1];
+        // draw line down
+        if (x === toX) {
             while(y < to[1]) {
                 grid[y][x] = char;
                 y += 1;
             }
         }
-        if (from[1] === to[1]) {
-            x = from[0];
-            y = from[1]
+        // draw line across
+        if (y === toY) {
             while(x < to[0]) {
                 grid[y][x] = char;
                 x += 1;
