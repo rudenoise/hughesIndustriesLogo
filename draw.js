@@ -2,7 +2,6 @@ var coords = require('./coordinates.json');
 var coords16x16 = require('./coordinates16x16.json');
 (function () {
     'use strict';
-    var grid;
 
     function drawLine(from, to, grid, char) {
         var x = from[0],
@@ -67,21 +66,43 @@ var coords16x16 = require('./coordinates16x16.json');
         return grid; 
     }
 
-    console.log('\n' + coords.width + 'x' + coords.height + '\n');
+    function scale(coords, factor) {
+        var scaledCoords = {};
+        scaledCoords.width = coords.width * factor;
+        scaledCoords.height = coords.height * factor;
+        scaledCoords.H = coords.H.map(function (coord) {
+            return [coord[0] * factor, coord[1] * factor];
+        });
+        scaledCoords.I = coords.I.map(function (coord) {
+            return [coord[0] * factor, coord[1] * factor];
+        });
+        return scaledCoords;
+    }
 
-    grid = makeGrid(coords.width, coords.height);
-    grid = plot(grid, coords.H, 'H');
-    grid = plot(grid, coords.I, 'I');
+    function draw(coords, scaleFactor) {
+        var grid = [];
 
-    printGrid(grid);
+        if (scaleFactor) {
+            coords = scale(coords, scaleFactor);
+        }
+        
+        console.log('\n' + coords.width + 'x' + coords.height + '\n');
 
-    console.log('\n' + coords16x16.width + 'x' + coords16x16.height + '\n');
-    
-    grid = makeGrid(coords16x16.width, coords16x16.height);
-    grid = plot(grid, coords16x16.H, 'H');
-    grid = plot(grid, coords16x16.I, 'I');
+        grid = makeGrid(coords.width, coords.height);
+        grid = plot(grid, coords.H, 'H');
+        grid = plot(grid, coords.I, 'I');
 
-    printGrid(grid);
+        printGrid(grid);
+    }
 
-    console.log('\n\n');
+    // PRINT IT ALL OUT
+    draw(coords);
+    draw(coords16x16);
+
+    // SCALE UP
+    // x2
+    draw(coords16x16, 2);
+    //x3
+    draw(coords16x16, 3);
+
 }());
