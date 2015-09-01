@@ -1,7 +1,8 @@
 var coords = require('./coordinates.json');
+var coords16x16 = require('./coordinates16x16.json');
 (function () {
     'use strict';
-    var grid = [], y = 0;
+    var grid;
 
     function drawLine(from, to, grid, char) {
         var x = from[0],
@@ -55,15 +56,32 @@ var coords = require('./coordinates.json');
         }
     }
 
-    while (y < coords.height) {
-        grid.push(Array.apply(null, Array(coords.width)).map(function () {
-            return ' ';
-        }));
-        y += 1;
+    function makeGrid(width, height) {
+        var grid = [], y = 0;
+        while (y < height) {
+            grid.push(Array.apply(null, Array(width)).map(function () {
+                return ' ';
+            }));
+            y += 1;
+        }
+        return grid; 
     }
 
+    console.log('\n' + coords.width + 'x' + coords.height + '\n');
+
+    grid = makeGrid(coords.width, coords.height);
     grid = plot(grid, coords.H, 'H');
     grid = plot(grid, coords.I, 'I');
 
     printGrid(grid);
+
+    console.log('\n' + coords16x16.width + 'x' + coords16x16.height + '\n');
+    
+    grid = makeGrid(coords16x16.width, coords16x16.height);
+    grid = plot(grid, coords16x16.H, 'H');
+    grid = plot(grid, coords16x16.I, 'I');
+
+    printGrid(grid);
+
+    console.log('\n\n');
 }());
