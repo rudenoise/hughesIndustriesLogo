@@ -63,7 +63,7 @@ var coords16x16 = require('./coordinates16x16.json');
             }));
             y += 1;
         }
-        return grid; 
+        return grid;
     }
 
     function scale(coords, factor) {
@@ -85,7 +85,7 @@ var coords16x16 = require('./coordinates16x16.json');
         if (scaleFactor) {
             coords = scale(coords, scaleFactor);
         }
-        
+
         console.log('\n' + coords.width + 'x' + coords.height + '\n');
 
         grid = makeGrid(coords.width, coords.height);
